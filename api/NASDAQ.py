@@ -2,7 +2,7 @@ from flask import FLask, jsonify
 import requests
 
 # Set your RapidAPI project and API key
-project_name = 'YOUR_RAPIDAPI_PROJECT_NAME'
+project_name = 'Nasdaq Stock Pricing'
 api_key = 'YOUR_RAPIDAPI_API_KEY'
 
 # Set the API endpoint and parameters
