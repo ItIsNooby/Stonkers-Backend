@@ -1,9 +1,9 @@
-from flask import FLask, jsonify
+from flask import Flask, jsonify
 import requests
 
 # Set your RapidAPI project and API key
 project_name = 'Nasdaq Stock Pricing'
-api_key = 'YOUR_RAPIDAPI_API_KEY'
+api_key = 'b731fee7a5mshf2b6608334c0b07p13bf5fjsn09fcf5df26f4'
 
 # Set the API endpoint and parameters
 endpoint = 'getRealtimeStockPrices'
@@ -18,7 +18,7 @@ headers = {
 }
 
 response = requests.get(
-    f'https://nasdaq-realtime-stock-pricing.p.rapidapi.com/{endpoint}',
+    f'https://nasdaq-realtime-stock-pricing.p.rapidapi.com//Stock/GetPrice/AAPL',
     params=params,
     headers=headers
 )
