@@ -1,17 +1,20 @@
 import threading
 from flask import render_template, Flask, request, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'temporary-secret-key'  # Replace with your own secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/volumes/users.db'
 
 db = SQLAlchemy(app)
+CORS(app)  # Enable CORS for the app
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
+
 
 @app.route('/')
 def index():
@@ -50,4 +53,7 @@ if __name__ == "__main__":
     # change name for testing
     from flask_cors import CORS
     cors = CORS(app)
+    app.run(debug=True, host="0.0.0.0", port="8080")
+
+if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="8080")
