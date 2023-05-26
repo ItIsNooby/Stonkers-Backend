@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'temporary-secret-key'  # Replace with your own secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # Replace with your SQLite database location
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/volumes/users.db'
 
 db = SQLAlchemy(app)
 
